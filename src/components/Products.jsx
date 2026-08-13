@@ -5,8 +5,13 @@ import { useEffect } from "react";
 import { fetchProducts } from "../store/actions";
 //import { fetchProducts } from
 const Products = () => {
-    const isLoading = false;
-    const errorMessage = "";
+    const { isLoading, errorMessage } = useSelector(
+        (state) => state.errors
+    )
+
+
+   // const isLoading = false;
+    //const errorMessage = "";
     const {products} = useSelector(
      (state) => state.products
     )
