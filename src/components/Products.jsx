@@ -4,6 +4,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchProducts } from "../store/actions";
 import Filter from "./Filter";
+import useProductFilter from "./useProductFilter";
+
+// http://localhost:xxxx?keyword=television&sortby=desc
+
+// 1.Make sure url is updated with filter values
+// 2. Use this filter values for getting data from backend
+
+
+
+
+
 //import { fetchProducts } from
 const Products = () => {
 
@@ -15,9 +26,15 @@ const Products = () => {
     )
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(fetchProducts());
-    }, [dispatch]) ;
+    useProductFilter();
+
+
+    
+    // useEffect(() => {
+    //     dispatch(fetchProducts());
+    // }, [dispatch]) ;
+
+
 //     const products = [
 // {
 //       productId: 652,
