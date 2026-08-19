@@ -20,6 +20,17 @@ export const ProductReducer = (state = initialState, action) => {
                 },
             };
 
+
+
+
+         case "FETCH_CATEGORIES":
+            return {
+                ...state,
+                categories: action.payload,
+             
+            };
+
+
           default:
             return state;
            
