@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { FaShoppingBag } from "react-icons/fa";
 import ProductViewModal from "./ProductViewModal";
+import { truncateText } from "./truncateText";
+
+
 const ProductCard = ({
       productId,
       productName,
@@ -56,10 +59,12 @@ const ProductCard = ({
                 })
             }}
                 className="text-lg font-semibold mb-2 cursor-pointer">
-                    {productName}
+                    {truncateText(productName, 30)}
                 </h2>
                 <div className="min-h-20 max-h-20">
-                    <p className="text-gray-600 text-sm"> {description} </p>
+                    <p className="text-gray-600 text-sm"> 
+                        {truncateText(description, 80)} 
+                    </p>
                 </div>
 
             <div className="flex items-center justify-between">   
