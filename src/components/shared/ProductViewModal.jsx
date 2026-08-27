@@ -1,14 +1,16 @@
-import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
-import { Divider } from '@mui/material'
-import { DialogBackdrop } from '@headlessui/react'
-import { MdClose, MdDone } from 'react-icons/md';
+import { Button, Dialog, DialogBackdrop ,DialogPanel, DialogTitle } from '@headlessui/react';
+import { Divider } from '@mui/material';
+import { useState } from 'react';
 import Status from './Status';
+import { MdClose, MdDone } from 'react-icons/md';
 
 function ProductViewModal({open, setOpen, product, isAvailable}) {
   
 
-    const { productName, image, description, price, specialPrice } = product ;
-
+    const { id, productName, image, description, quantity, price, discount, specialPrice } = product ;
+    const handleClickOpen = () => {
+      setOpen(true)
+    }
 
   return (
     <>
